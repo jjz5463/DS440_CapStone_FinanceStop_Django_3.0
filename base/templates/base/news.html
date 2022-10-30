@@ -1,0 +1,37 @@
+
+{% extends 'main.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<head>
+    <title>News Browsing</title>
+
+    <link rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+<!--href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"-->
+</head>
+<body>
+
+    <div class = "container">
+            <h1 style="color:lightblue">
+                Latest News
+            </h1><br>
+    </div>
+
+    <div class = "container">
+        {%  for news, des, link, i in mylist %}
+            <img src="{{ i }}" alt=""><br><br>
+            <h2>News:</h2>{{ news }}
+            {{ value | linebreaks}}
+
+            <h2>Description:</h2> {{ des }}
+            {{ value  | linebreaks}}
+
+            <h2>Link:</h2> {{ link }}
+            {{ value | urlize | linebreaks}}<br>
+        {% endfor %}
+    </div>
+</body>
+</html>
+{% endblock content %}

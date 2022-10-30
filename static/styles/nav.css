@@ -1,0 +1,74 @@
+/* Style the navigation menu */
+.navbar {
+  width: 100%;
+  background-color: #3f4156;
+  overflow: auto;
+}
+
+/* Navigation links */
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: #b2bdbd;
+  text-decoration: none;
+  font-size: 17px;
+  width: 25%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  text-align: center; /* If you want the text to be centered */
+}
+
+/* Add a background color on mouse-over */
+.navbar a:hover {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#13529E', endColorstr='#084084');
+  background: -webkit-gradient(linear, left top, left bottom, from(#696d97), to(#51546e));;
+}
+
+/* Style the current/active link */
+.navbar a.active {
+  background-color: #04AA6D;
+}
+
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left; /* If you want the text to be left-aligned on small screens */
+  }
+}
+
+.right {
+    text-align: right;
+    float: right;
+}
+
+#ovoMenu a:link, #ovoMenu a:visited, #ovoMenu a:active, #ovoMenu a:hover {
+    color: black;
+    background-color: lightcoral;
+    /* Corners */
+    -moz-border-radius-topleft: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-right-radius: 4px;
+    /* Size */
+    margin-left: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    /* Display it as a block */
+    display: inline-block;
+    /* Height of the link */
+    height: 30px;
+    line-height: 30px;
+    /* No underline */
+    text-decoration: none;
+    /* No outline */
+    outline: 0;
+}
+
+#ovoMenu a:hover {
+    /* Other background */
+    background-color: lightpink;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#13529E', endColorstr='#084084');
+    background: -webkit-gradient(linear, left top, left bottom, from(mediumpurple), to(lightpink));
+    background: -moz-linear-gradient(top, mediumpurple, lightpink);
+}
