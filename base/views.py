@@ -42,7 +42,7 @@ def chatroomHome(request):
         Q(description__icontains=q)
     )
 
-    topics = Topic.objects.all()
+    topics = Topic.objects.all()[0:5]
     room_count = rooms.count()
 
     room_messages = Message.objects.filter(Q(room__topic__name__icontains=q))
@@ -202,6 +202,15 @@ def news(request):
     mylist = zip(news, desc, link, img)
 
     return render(request, 'base/news.html', context={"mylist":mylist})
+
+def topicsPage(request):
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    topics = Topic.objects.filter(name__icontains=q)
+    return render(request, 'base/topics.html', {'topics': topics})
+
+def activityPage(request):
+    room_messages = Message.objects.all()
+    return render(request, 'base/activity.html', {'room_messages': room_messages})
 
 from plotly.offline import plot
 import plotly.graph_objects as go
